@@ -32,7 +32,8 @@ public class ApplicationMenu {
             int mainMenuPrompt = consoleController.printMainMenu();
             switch (mainMenuPrompt) {
                 case 0:
-                    nextStep = consoleController.printStartMenu();
+                    consoleController.printLine("Exiting application.");
+                    nextStep = false;
                     break;
                 case 1:
                     handleItemMenu();
@@ -44,6 +45,7 @@ public class ApplicationMenu {
                     consoleController.printLine("Invalid input. Please try again.");
             }
         }
+        System.exit(0);
     }
 
     private void handleItemMenu() {
